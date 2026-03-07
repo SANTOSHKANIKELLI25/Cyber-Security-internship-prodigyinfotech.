@@ -1,0 +1,85 @@
+#PROJECT TITTLE
+
+_______PASSWORD COMPLEXITY CHECKER 🔐_______
+
+This project is a Python-based password strength checker that evaluates the security level of a password based on common cybersecurity password policies. 
+The program analyzes the password using multiple criteria such as length, uppercase letters, lowercase letters, numbers, and special characters.
+Based on these checks, the tool categorizes the password as Weak, Medium,or Strong and provides feedback to help users improve their password security
+
+#FEATURES//
+**Checks password length (minimum 8 characters)
+**Detects uppercase and lowercase letters
+**Validates the presence of numbers
+**Ensures special characters are included
+**Provides password strength evaluation
+**Gives feedback for improving weak passwords
+
+#TECHNOLOGIES USED//
+**Python
+**Regular Expressions (re module)
+
+@How It Works//
+The user enters a password.
+The program checks the password against security rules.
+Each condition contributes to a security score.
+Based on the score, the password is classified as Weak, Medium, or Strong.
+
+#PROJECT IMPLEMENTATION//
+
+Below is the complete Python implementation of the Password Complexity Checker.
+The program analyzes the strength of a password by validating multiple security criteria such as length, 
+uppercase and lowercase characters, numbers, and special symbols.
+The output screenshot demonstrating the password strength evaluation is also provided below.
+**________________________________________________________________________________________________________________**
+import re
+
+def check_password_strength(password):
+
+    print("\nChecking password security...\n")
+
+    if len(password) < 8:
+        print("❌ Password must be at least 8 characters long")
+
+    if not re.search(r"[A-Z]", password):
+        print("❌ Add at least one uppercase letter")
+
+    if not re.search(r"[a-z]", password):
+        print("❌ Add at least one lowercase letter")
+
+    if not re.search(r"[0-9]", password):
+        print("❌ Add at least one number")
+
+    if not re.search(r"[!@#$%^&*(),.?\":{}|<>]", password):
+        print("❌ Add at least one special character")
+
+    length = len(password) >= 8
+    upper = re.search(r"[A-Z]", password)
+    lower = re.search(r"[a-z]", password)
+    digit = re.search(r"[0-9]", password)
+    special = re.search(r"[!@#$%^&*(),.?\":{}|<>]", password)
+
+    score = sum([length, bool(upper), bool(lower), bool(digit), bool(special)])
+
+    print("\nPassword Strength Result:")
+
+    if score == 5:
+        print("🔐 Strong Password")
+    elif score >= 3:
+        print("⚠️ Medium Password")
+    else:
+        print("❌ Weak Password")
+
+
+password = input("Enter your password: ")
+check_password_strength(password)
+**_____________________________________________________________________________________________________________________**
+
+__LEARNING OUTCOME__
+
+Through this project, I learned how password security policies work and how to implement a password strength checker using Python.
+I gained hands-on experience with regular expressions, input validation, and basic cybersecurity practices for evaluating password complexity.
+
+
+Author
+@SANTOSH KANIKELLI
+Cyber Security Intern – Prodigy InfoTech.
