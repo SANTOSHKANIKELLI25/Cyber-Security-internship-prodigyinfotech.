@@ -1,0 +1,126 @@
+# Cyber-Security-internship-prodigyinfotech
+protfolio show casing my intern ship Project AT #PRODIGYINFOTECH
+#PROJECT_01
+____TITTLE_____
+
+""PIXEL_MANIPULATION_FOR_IMAGE_ENCRYPTION"" 🔐
+
+**A simple Python project that demonstrates image encryption and decryption using pixel manipulation techniques. 
+The program modifies RGB pixel values using a numerical key to encrypt an image and restores the original image through decryption.
+
+__PROJECT OVERVIEW__
+
+This project shows how basic cryptographic ideas can be applied to image data.
+Each pixel in an image contains RGB values. By applying a mathematical operation to these values, the image becomes visually distorted and unreadable.
+Using the same encryption key, the program can reverse the process and recover the original image.
+**This project is part of my Cyber Security Internship at #ProdigyInfoTech.**
+
+ __FEATURES__
+
+✅ Encrypt images using a numerical key
+✅ Decrypt images using the same key
+✅ Pixel-by-pixel RGB manipulation
+✅ Simple and beginner-friendly implementation
+✅ Demonstrates basic encryption concepts
+
+**TECHNOLOGIES USED**
+
+*Python
+*Pillow (PIL) Library
+*Image Processing
+
+How the Program Works?
+
+**The program loads an image using the Pillow library.
+**It accesses each pixel in the image.
+**A mathematical operation is applied to the RGB values using an encryption key.
+**The encrypted image is saved.
+**The same key is used to reverse the operation and restore the original image.
+
+ #DEMONSTRATING  WHOLE PROJECT STRUCTURE IN FEW LINES.
+Pixel-Image-Encryption
+│
+├── image_encrypt.py
+├── Cyber_Security.jpg
+├── encrypted_image.png
+├── decrypted_image.png
+**PROJECT IMPEMENTATION**
+
+Below is the complete Python implementation used to perform image encryption and decryption using pixel manipulation.
+                                                   
+*The program modifies the RGB values of each pixel based on a user-provided encryption key.
+*The encrypted image appears visually distorted due to the modified pixel values. Using the same key, the program reverses the 
+ process and restores the original image.
+*The output examples of both encrypted and decrypted images are attached below.
+
+**_____________________________________________________**
+
+from PIL import Image
+
+def encrypt_image(input_path, output_path, key):
+    img = Image.open(input_path)
+    pixels = img.load()
+
+    width, height = img.size
+
+    for x in range(width):
+        for y in range(height):
+
+            r, g, b = pixels[x, y]
+
+            # Encrypt pixel values
+            r = (r + key) % 256
+            g = (g + key) % 256
+            b = (b + key) % 256
+
+            pixels[x, y] = (r, g, b)
+
+    img.save(output_path)
+    print("Encryption complete. Saved as:", output_path)
+
+
+def decrypt_image(input_path, output_path, key):
+    img = Image.open(input_path)
+    pixels = img.load()
+
+    width, height = img.size
+
+    for x in range(width):
+        for y in range(height):
+
+            r, g, b = pixels[x, y]
+
+            # Decrypt pixel values
+            r = (r - key) % 256
+            g = (g - key) % 256
+            b = (b - key) % 256
+
+            pixels[x, y] = (r, g, b)
+
+    img.save(output_path)
+    print("Decryption complete. Saved as:", output_path)
+
+
+key = int(input("Enter encryption key (number): "))
+
+encrypt_image("Cyber_Security.jpg", "encrypted_image.png", key)
+
+decrypt_image("encrypted_image.png", "decrypted_image.png", key)
+**________________________________________________________________________**
+#ORGINAL JPEG.![Cyber_Security](https://github.com/user-attachments/assets/77e263f4-0828-4b42-9f9d-f04ea5080164)
+#<ENCRYPTED>
+<img width="584" height="360" alt="encrypted_image" src="https://github.com/user-attachments/assets/6dab39c8-6ab7-4037-a313-5bea2789f6de" />
+#<DECRYPTED>
+<img width="584" height="360" alt="decrypted_image" src="https://github.com/user-attachments/assets/e255d08d-4f84-4d85-af67-accb0d8ee846" />
+
+"""
+Project: Pixel Manipulation for Image Encryption
+Internship: Prodigy InfoTech Cyber Security Internship
+
+Description:
+This program encrypts and decrypts an image by modifying
+pixel RGB values using a numerical key.
+
+AUTHOR: SANTOSH KANIKELLI
+"""
+
