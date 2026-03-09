@@ -8,7 +8,7 @@ _______PASSWORD COMPLEXITY CHECKER 🔐_______
 
 This project is a Python-based password strength checker that evaluates the security level of a password based on common cybersecurity password policies. 
 The program analyzes the password using multiple criteria such as length, uppercase letters, lowercase letters, numbers, and special characters.
-Based on these checks, the tool categorizes the password as Weak, Medium,or Strong and provides feedback to help users improve their password security
+Based on these checks, the tool categorizes the password as Weak, Medium,or Strong and provides feedback to help users improve their password security.
 
 #FEATURES//
 **Checks password length (minimum 8 characters)
