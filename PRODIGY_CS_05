@@ -1,0 +1,79 @@
+___TITTLE___
+NETWORK PACKET AANALYZER🌐
+This project demonstrates a simple network packet analyzer built using Python and the Scapy library. The program captures network 
+packets and displays key information such as the source IP address, destination IP address, and protocol type.
+Packet analyzers are widely used in network security monitoring and cybersecurity investigations to observe and analyze network traffic.
+This project was developed as part of my Cyber Security Internship at Prodigy InfoTech.
+
+#PROJECT OVERVIEW__
+A network packet analyzer (also known as a packet sniffer) is a tool used to capture and inspect data packets traveling across a network. 
+Security analysts use packet analyzers to monitor network activity, detect suspicious traffic, and investigate potential security incidents.
+This project implements a basic packet analyzer that captures network packets and extracts useful information from them
+
+#FEATURES
+**Captures network packets in real time
+**Displays source IP and destination IP addresses
+**Identifies the protocol used by the packet
+**Demonstrates basic packet sniffing techniques
+**Helps understand network traffic monitoring in cybersecurit
+
+#TECHNOLOGIES USED
+**Python
+**Scapy library
+
+!HOW THE PROGRAM WORKS??
+**The program uses the Scapy library to capture packets from the network.
+**Each captured packet is analyzed to check if it contains an IP layer.
+**If an IP layer is present, the program extracts important details such as:
+**Source IP address
+**Destination IP address
+**Protocol type
+**The extracted information is printed on the console for analysis.
+
+#PROJECT IMPLEMENTATION
+Below are the full details of the project, including the complete Python code implementation and a sample output demonstrating how the 
+packet analyzer captures network packets.
+****________________________________________________________________________________________________________________________________****
+from scapy.all import sniff, IP
+
+def packet_callback(packet):
+    
+    if packet.haslayer(IP):
+        src_ip = packet[IP].src
+        dst_ip = packet[IP].dst
+        protocol = packet[IP].proto
+
+        print("\nPacket Captured")
+        print("Source IP:", src_ip)
+        print("Destination IP:", dst_ip)
+        print("Protocol:", protocol)
+
+print("Starting Packet Sniffer... Press Ctrl+C to stop")
+
+sniff(prn=packet_callback, count=10)
+**___________________________________________________________________________________________________________________________________****
+
+#EXAMPLE OUTPUT
+Starting Packet Sniffer...
+
+Packet Captured
+Source IP: 192.168.1.5
+Destination IP: 142.250.182.46
+Protocol: 6
+
+Packet Captured
+Source IP: 192.168.1.5
+Destination IP: 8.8.8.8
+Protocol: 17
+
+#LEARNING OUTCOME
+Through this project, I learned how network packets can be captured and analyzed using Python. This helped me understand the basics of 
+network traffic monitoring and packet inspection, which are important concepts in cybersecurity and network security analysis.
+
+#NOTE
+This project is developed strictly for educational purposes to understand how network packet analysis works in cybersecurity.
+It should not be used for unauthorized network monitoring.
+
+AUTHOR
+Santosh Kanikelli
+Cyber Security Intern – Prodigy InfoTech.
