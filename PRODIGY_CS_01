@@ -1,0 +1,78 @@
+__TITTLE__
+
+CEASAR CIPHER ENCRYPTION 🔐
+This project demonstrates the implementation of the Caesar Cipher encryption technique using Python. The Caesar Cipher is one of the oldest and simplest forms of 
+encryption, where each letter in the plaintext is shifted by a fixed number of positions in the alphabet to produce the encrypted message.
+This project was developed as part of my Cyber Security Internship at Prodigy InfoTech.
+
+#PROJECT OVERVIEW
+The Caesar Cipher is a classical cryptographic technique used to protect messages by shifting the letters of the alphabet by a 
+specific number of positions known as the shift value.
+**For example, if the shift value is 3, each letter in the message moves three positions forward in the alphabet.
+
+#FEATURES.
+**Encrypts text using the Caesar Cipher technique
+**Decrypts encrypted messages using the same shift value
+**Supports both uppercase and lowercase characters
+**Demonstrates basic cryptography concepts using Python
+
+#TECHNOLOGIES USED
+ **Python.
+#How The Program works?
+**The program takes a message as input from the user.
+**The user provides a shift value.
+**Each letter in the message is shifted forward in the alphabet by the given value to produce the encrypted message.
+**The encrypted message can then be decrypted by shifting the characters backward by the same value.
+
+#PROJECT IMPLEMENTAION
+Below are the full details of the project, including the complete Python code implementation and a sample output demonstrating how the 
+Caesar Cipher encryption and decryption works.
+**__________________________________________________________________________________________________________________________________________**
+
+def encrypt(text, shift):
+    result = ""
+
+    for char in text:
+        if char.isalpha():
+            shift_base = ord('A') if char.isupper() else ord('a')
+            result += chr((ord(char) - shift_base + shift) % 26 + shift_base)
+        else:
+            result += char
+
+    return result
+
+
+def decrypt(text, shift):
+    return encrypt(text, -shift)
+
+
+print("=== Caesar Cipher Program ===")
+
+message = input("Enter your message: ")
+shift = int(input("Enter shift value: "))
+
+encrypted_text = encrypt(message, shift)
+print("Encrypted Message:", encrypted_text)
+
+decrypted_text = decrypt(encrypted_text, shift)
+print("Decrypted Message:", decrypted_text)
+**_________________________________________________________________________________________________________________________________________________**
+
+#EXAMPLE OUTPUT
+Enter your message: cybersecurity
+Enter shift value: 3
+
+Encrypted Message: fbehuvhfxulwb
+Decrypted Message: cybersecurity
+
+#LEARNING OUTCOME
+Through this project, I learned how classical encryption techniques work and how the Caesar Cipher algorithm can be implemented using Python. 
+This helped me understand the fundamentals of cryptography and how encryption transforms plaintext into ciphertext.
+
+**NOTE!
+This project is developed strictly for educational purposes to understand basic cryptographic techniques. The Caesar Cipher is not 
+secure for modern communication but helps in learning the foundational concepts of encryption.
+
+#Author
+Santosh Kanikelli
+Cyber Security-PRODIGY INFOTECH
