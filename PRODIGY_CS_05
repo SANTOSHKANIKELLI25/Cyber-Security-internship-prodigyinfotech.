@@ -3,7 +3,9 @@ protfolio show casing my intern ship Project AT #PRODIGYINFOTECH
 #PROJECT_05
 
 ___TITTLE___
-NETWORK PACKET AANALYZER🌐
+
+#NETWORK PACKET AANALYZER🌐
+
 This project demonstrates a simple network packet analyzer built using Python and the Scapy library. The program captures network 
 packets and displays key information such as the source IP address, destination IP address, and protocol type.
 Packet analyzers are widely used in network security monitoring and cybersecurity investigations to observe and analyze network traffic.
@@ -80,4 +82,4 @@ It should not be used for unauthorized network monitoring.
 
 Author
 @SANTOSH KANIKELLI
-Cyber Security Intern – #Prodigy InfoTech.
+Cyber Security Intern – #ProdigyInfoTech.
