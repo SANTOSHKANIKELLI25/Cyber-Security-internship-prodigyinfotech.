@@ -1,10 +1,12 @@
  # Cyber-Security-internship-prodigyinfotech
 protfolio show casing my intern ship Project AT #PRODIGYINFOTECH
-#PROJECT_02
+#PROJECT_03
 
 #PROJECT TITTLE
 
 _______PASSWORD COMPLEXITY CHECKER 🔐_______
+
+#PROJECT OVERVIEW
 
 This project is a Python-based password strength checker that evaluates the security level of a password based on common cybersecurity password policies. 
 The program analyzes the password using multiple criteria such as length, uppercase letters, lowercase letters, numbers, and special characters.
